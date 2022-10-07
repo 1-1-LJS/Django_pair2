@@ -9,5 +9,5 @@ class Reviews(models.Model):
     content = models.TextField()
     movie_name = models.CharField(max_length=20)
     grade = models.IntegerField(default=3)
-    create_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

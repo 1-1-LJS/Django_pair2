@@ -2,10 +2,11 @@
 {% load django_bootstrap5 %}
 {% load static %}
 {% block content %}
-<form action="" method="POST">
-  {% csrf_token %}
-  {% bootstrap_form review_form %}
-  {% bootstrap_button button_type="submit" content="ok" %}
-</form>
-
+<div class="container my-3">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form review_form %}
+    {% bootstrap_button button_type="submit" content="ok" %}
+  </form>
+</div>
 {% endblock %}

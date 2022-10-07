@@ -5,6 +5,10 @@ from .forms import ReviewForm
 # Create your views here.
 
 
+def main(request):
+    return render(request, "reviews/main.html")
+
+
 def index(request):
     reviews = Reviews.objects.all()
     context = {
@@ -26,19 +30,22 @@ def create(request):
     }
     return render(request, "reviews/create.html", context=context)
 
-def detail(request,pk):
+
+def detail(request, pk):
     review = Reviews.objects.get(pk=pk)
     context = {
         "review": review,
     }
-    return render(request, "reviews/detail.html", context )
+    return render(request, "reviews/detail.html", context)
 
-def delete(request,pk):
+
+def delete(request, pk):
     review = Reviews.objects.get(pk=pk)
     review.delete()
     return redirect("reviews:index")
 
-def update(request,pk):
+
+def update(request, pk):
     review = Reviews.objects.get(pk=pk)
     if request.method == "POST":
         review_form = ReviewForm(request.POST, instance=review)
@@ -52,4 +59,3 @@ def update(request,pk):
         "review": review,
     }
     return render(request, "reviews/create.html", context)
-

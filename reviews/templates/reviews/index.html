@@ -7,7 +7,7 @@
     <div class="card my-3">
         <div class="card-body">
             <h3 class="card-title">
-                <a class="btn border-white" href="{% url 'reviews:detail' review.pk %}">
+                <a class="text-black text-decoration-none" href="{% url 'reviews:detail' review.pk %}">
                     {{ review.title }}
                 </a>
             </h3>
@@ -30,5 +30,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}

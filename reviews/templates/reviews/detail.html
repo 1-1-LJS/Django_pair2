@@ -6,7 +6,12 @@
     <div class="card-body">
       <h3 class="card-title mb-4">{{ review.title }}</h3>
       <h6 class="card-subtitle mb-2 text-muted">{{ review.movie_name }}</h6>
-      <p class="card-text">{{ review.updated_at|date:'Y-m-d H:i:s' }}</p>
+      <p class="card-text">
+        {{ review.updated_at|date:'Y-m-d H:i:s' }}
+        {% if review.created_at != review.updated_at %}
+        (수정됨)
+        {% endif %}
+      </p>
       <p class="card-text">{{ review.content }}</p>
       <p class="card-text">
         {% if review.grade == 1 %}

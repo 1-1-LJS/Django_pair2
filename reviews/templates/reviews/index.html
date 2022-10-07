@@ -3,7 +3,7 @@
 {% block content %}
 
 {% for review in reviews %}
-<li>{{ review.title }}</li>
+<li><a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a></li>
 <li>{{ review.movie_name }}</li>
 <li>{{ review.grade }}</li>
 <li>{{ review.created_at }}</li>
